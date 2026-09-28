@@ -1,0 +1,25 @@
+{
+  "name": "jev-etymology",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "frontend",
+    "worker"
+  ],
+  "scripts": {
+    "smoke": "node --experimental-strip-types scripts/smoke-test.ts",
+    "dev": "npm run dev -w frontend",
+    "dev:worker": "npm run dev -w worker",
+    "build": "npm run build -w frontend && npm run build -w worker",
+    "test": "npm run test -w shared && npm run test -w worker && npm run test -w frontend",
+    "typecheck": "npm run typecheck -w shared && npm run typecheck -w worker && npm run typecheck -w frontend"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
